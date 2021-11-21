@@ -13,6 +13,8 @@ function fibonachi(len) {
 
 // fibonachi(5)
 
+
+
 //    №2
 
 const allStr = ['hello', 'nero', 'no', 'iStanbul', 'iodel']
@@ -26,6 +28,8 @@ function findSameStr(strArray) {
 }
 
 // findSameStr(allStr)
+
+
 
 //    №3
 
@@ -72,4 +76,4 @@ function ribsValues(arr, num) {
     }
 }
 
-matrix(5)
+// matrix(5)
