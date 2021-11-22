@@ -75,5 +75,4 @@ function matrix(num) {
     console.log(arr)
 }
 
-
-matrix(7)
+// matrix(10)
