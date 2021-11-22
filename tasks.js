@@ -72,7 +72,7 @@ function matrix(num) {
         }
     }
     flag--
-    console.log(arr, flag)
+    console.log(arr)
 }
 
 
