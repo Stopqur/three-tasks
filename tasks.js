@@ -33,9 +33,9 @@ function findSameStr(strArray) {
 
 //    №3
 
-let flag = 0
 
 function matrix(num) {
+    let flag = 1
     let arr = [[]]
 
     for(let i = 0; i < num; i++) {
@@ -45,35 +45,35 @@ function matrix(num) {
         }
     }
 
-    // while(flag !== num * 2) {
-        for(let val = num; val > 2; val --) {
-            ribsValues(arr, num, val)
+    for(let val = num; val > num / 2; val--) {
 
-        }
-    // } 
-
-    console.log(arr)
-}
-
-function ribsValues(arr, num) {    
-    for(let i = 0; i < num; i++) {
-        arr[i] = []
-        for(let j = 1; j <= num; j++) {
-            arr[i].push(j)
-        }
-        arr[i][num - 1] = i + num
-    }
-    
-    flag = arr[arr.length - 1][arr.length - 1]
-
-    for(let i = arr.length - 1; i > 0; i--) {
-        if(i === arr.length - 1) {
-            for(let j = arr[arr.length - 1].length - 2; j > arr[arr.length - 1].length - 1 - num; j--) {
-                arr[i][j] = ++flag 
+       // Top-Right
+       for(let i = num - val; i < val; i++) {
+            if(i === num - val) {
+                for(let j = num - val; j < val; j++) {
+                    arr[i][j] = flag
+                    flag++
+                }
+                flag--
             }
+            arr[i][val - 1] = flag
+            flag++
         }
-        arr[i][0] = ++flag        
+        
+        // Bottom-Left
+        for(let i = val - 1; i > num - val; i--) {
+            if(i === val - 1) {
+                for(let j = val - 2; j > num - val; j--) {
+                    arr[i][j] = flag
+                    flag++
+                }
+            }
+            arr[i][num - val] = flag++        
+        }
     }
+    flag--
+    console.log(arr, flag)
 }
 
-// matrix(5)
+
+matrix(7)
