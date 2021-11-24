@@ -2,34 +2,30 @@
 
 //    №1
 
-const arr = [0, 1]
-function fibonachi(len) {
+function createFibonachi(len, argArr) {
+    if(typeof argArr === 'undefined') {
+        argArr = [0, 1]
+    }
+
     if (len < 2) {
         console.log('Введите значение, больше 2')
     } else {
-        if (arr.length !== len) {      
-            arr.push(fibonachi(len - 1) + arr[arr.length - 2]) 
-            return arr[arr.length - 1]
+        if (argArr.length !== len) {      
+            argArr.push(fibonachi(len - 1, argArr) + argArr[argArr.length - 2]) 
+            console.log(argArr)
+            return argArr[argArr.length - 1]
         } else {
-            return arr[len - 1]
+            return argArr[len - 1]
         }
     }
+
 }
 
-// fibonachi(6)
+createFibonachi(6)
 // console.log(arr)
 
 
-// one more function to 1 task, but without recursion
-function createFibonachi(len) {
-    const arr = [0, 1]
-    for (let i = 2; i < len; i++) {
-        arr.push(arr[arr.length - 1] + arr[arr.length - 2])
-    }
-    console.log(arr)
-}
 
-createFibonachi(5)
 
 
 //    №2
@@ -54,7 +50,7 @@ function findSameStr(strArray) {
     console.log(strArray)
 }
 
-findSameStr(allStr)
+// findSameStr(allStr)
 
 
 
