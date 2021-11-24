@@ -11,8 +11,7 @@ function createFibonachi(len, argArr) {
         console.log('Введите значение, больше 2')
     } else {
         if (argArr.length !== len) {      
-            argArr.push(fibonachi(len - 1, argArr) + argArr[argArr.length - 2]) 
-            console.log(argArr)
+            argArr.push(createFibonachi(len - 1, argArr) + argArr[argArr.length - 2]) 
             return argArr[argArr.length - 1]
         } else {
             return argArr[len - 1]
